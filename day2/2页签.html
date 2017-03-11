@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, 宋体, Tahoma, Arial, Helvetica, STHeiti;
+        }
+        .article-hot{
+            width:290px;
+            border-top:1px solid #ececec;
+            margin-top:80px;
+            position:relative;
+
+
+        }
+        .tab{
+            width:46px;
+            height:28px;
+            border:1px solid #ececec;
+            color:#333;
+            font-size:12px;
+            position:absolute;
+            text-align:center;
+            top:-30px;
+            right:0;
+            line-height:28px;
+
+            color:#999;
+          }
+        .tab-daily{
+            right: 47px;
+            border-bottom:1px solid #fff;
+          color:black;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding:0;
+
+        }
+        article-title{
+            text-decoration:none;
+        }
+
+
+    </style>
+
+</head>
+<body>
+ <div class="article-hot" id="articleHot">
+     <div class="tab tab-daily"id="tabDaily">日榜</div>
+     <div class="tab tab-week"id="tabWeek">周榜</div>
+     <div class="tab-content tab-content-daily"id="tabContentDaily">
+         <ul>
+
+             <li><i class="icon icon1"></i> <a class="article-title" href="#">著名笑星陈佩斯阔别荧屏这20年</a><a class="author" href="#">李洪伙</a> </li>
+             <li><i class="icon icon2"></i> <a class="article-title" href="#">建墙，禁止入境…川普是想做什</a><a  class="author" href="#">X教授</a></li>
+             <li><i class="icon icon3"></i> <a class="article-title" href="#">房价已经进入索罗斯的自反强化</a><a  class="author" href="#">齐俊杰</a></li>
+             <li><i class="icon icon4"></i> <a class="article-title" href="#">海盗克星！深度解读劳斯莱斯无</a><a  class="author" href="#">国仁</a></li>
+             <li><i class="icon icon5"></i> <a class="article-title" href="#">《奇星记》鲜肉齐聚，开创奇幻</a><a  class="author" href="#">影视毒舌</a></li>
+         </ul>
+
+
+
+
+
+     </div>
+     <div class="tab-content tab-content-week"id="tabContentWeek">周榜，每周有什么新的消息</div>
+
+ </div>
+
+ <script type="text/javascript">
+var articleHotDom=document.querySelector("#articleHot");
+var tabDailyDom=document.querySelector("#tabDaily");
+var tabWeekDom=document.querySelector("#tabWeek");
+
+articleHotDom.onmouseover=function(ev){
+    //触发实际事件的元素
+    var targetDom=ev.target;
+    if(targetDom.id=="tabDaily"){
+        tabDailyDom.style.borderBottom="1px solid #fff";
+        tabDailyDom.style.color="black";
+        tabWeekDom.style.borderBottom="1px solid #ececec";
+        tabWeekDom.style.color="#999";
+
+
+    }
+    if(targetDom.id=="tabWeek"){
+        tabWeekDom.style.borderBottom="1px solid #fff";
+        tabDailyDom.style.color="#999";
+        tabDailyDom.style.borderBottom="1px solid #ececec";
+        tabWeekDom.style.color="black";
+
+
+    }
+
+
+
+}
+
+ </script>
+</body>
+</html>

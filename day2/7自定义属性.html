@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+    </style>
+
+</head>
+<body>
+<div id="box"date-demo-test="hello world">Hello</div>
+<script type="text/javascript">
+var boxDom=document.querySelector("#box");
+//var val=boxDom.getAttribute("demo");
+//读取自定义属性值
+var val=boxDom.dataset.demoTest;
+//修改自定义属性
+
+
+console.log(val);
+
+</script>
+</body>
+</html>

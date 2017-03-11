@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+.box-hidden{
+    visibility: hidden;
+}
+
+    </style>
+
+</head>
+<body>
+<div id="box"class="test">
+    Hello
+</div>
+<button type="button"id="btnToggle">隐藏/显示</button>
+<script type="text/javascript">
+    var boxDom=document.querySelector("#box");
+    var btnAddDom=document.querySelector("#btnToggle");
+
+    btnAddDom.onclick=function(){
+        boxDom.classList.toggle("box-hidden");
+    }
+
+</script>
+</body>
+</html>

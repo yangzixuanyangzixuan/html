@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, 宋体, Tahoma, Arial, Helvetica, STHeiti;
+        }
+        .article-hot{
+            border:1px solid #f0f0f0;
+            width:290px;
+            margin-top:80px;
+            position:relative;
+
+
+        }
+        .tab{
+            width:46px;
+            height:28px;
+            border:1px solid #ececec;
+            text-align:center;
+            line-height:28px;
+            font-size: 12px;
+            color:red;
+            position:absolute;
+            right:0;
+            top:-30px;
+            color:green;
+
+        }
+        .tab-daily{
+            right:47px;
+            border-bottom:1px solid #fff;
+            color:black;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+ <div class="article-hot" id="articleHot">
+
+     <div class="tab tab-daily"id="tabDaily">日榜</div>
+     <div class="tab" id="tabWeek">周榜</div>
+     <div class="tab-content tab-content-daily" id="tabContentDaily" >
+
+         <!--<ul>
+             <li><i class="incon incon1"></i><a class="aticle-title" href=""></a></li>
+             <li><i class="incon incon2"></i><a class="aticle-title" href=""></a></li>
+             <li><i class="incon incon3"></i><a class="aticle-title" href=""></a></li>
+             <li><i class="incon incon4"></i><a class="aticle-title" href=""></a></li>
+             <li><i class="incon incon5"></i><a class="aticle-title" href=""></a></li>
+         </ul>-->
+     </div>
+     <div class="tab-content"id="tabContentWeek">周邦33333333333</div>
+
+ </div>
+
+ <script type="text/javascript">
+     var articleHotDom=document.querySelector("articleHot");
+     var tabDailyDom=document.querySelector("#tabDaily");
+     var tabWeekDom=document.querySelector("#tabWeek");
+
+
+      articleHotDom.onmouseover=function(ev){
+          var targetDom=ev.target;
+          if(targetDom.id=="tabDaily"){
+
+              tabDailyDom.style.borderBottom="1px solid #fff";
+              tabDailyDom.style.color="black";
+              tabWeekDom.style.borderBottom="1px solid #ececec";
+              tabWeekDom.style.color="#999";
+
+          }
+          if(targetDom.id=="tabWeek"){
+              tabWeekDom.style.borderBottom="1px solid #ececec";
+              tabDailyDom.style.color="#999";
+              tabDailyDom.style.borderBottom="1px solid #fff";
+              tabWeekDom.style.color="black";
+
+
+          }
+
+      }
+
+
+
+ </script>
+</body>
+</html>
