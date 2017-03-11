@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            background-color:red;
+            font-size:50px;
+            color:green;
+
+        }
+   .box1{
+       border:1px solid pink;
+
+   }
+
+    </style>
+
+
+
+</head>
+<body>
+<div id="box">hello</div>
+<button type="button" id="btnAdd">添加样式</button>
+<button type="button" id="btnDel">删除样式</button>
+<button type="button" id="btnAddBorder">添加边框样式</button>
+
+
+<script type="text/javascript">
+    var boxDom=document.querySelector("#box");
+    var btnAddDom=document.querySelector("#btnAdd");
+    var btnDelDom=document.querySelector("#btnDel");
+
+    var btnAddBorderDom=document.querySelector("#btnAddBorder");
+
+   btnAddDom.onclick=function(){
+        boxDom.setAttribute("class" ,"box");
+   }
+
+   btnDelDom.onclick=function () {
+       boxDom.removeAttribute("class");
+}
+
+
+    btnAddBorderDom.onclick=function(){
+       var attrVal=boxDom.getAttribute("class");
+       boxDom.setAttribute("class",attrVal+" box1");
+
+}
+
+
+
+</script>
+</body>
+</html>

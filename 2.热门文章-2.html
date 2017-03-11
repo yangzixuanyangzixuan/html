@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>尚硅谷HTML5 初级阶段</title>
+    <style type="text/css">
+        body{
+            font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", 微软雅黑, 宋体, Tahoma, Arial, Helvetica, STHeiti;
+        }
+        .article-hot{
+            border-top: 1px solid #ececec;
+            width: 290px;
+            margin-top: 80px;
+
+            position: relative;
+        }
+        .tab{
+            width: 46px;
+            height: 28px;
+            border: 1px solid #ececec;
+
+            text-align: center;
+            line-height: 28px;
+
+            font-size: 12px;
+            color: #333;
+
+            position: absolute;
+
+            right: 0;
+            top: -30px;
+
+            color: #999;
+
+        }
+        .tab-daily{
+            right: 47px;
+            border-bottom: 1px solid #fff;
+            color: black;
+        }
+
+        .tab-content{
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+        }
+        .tab-content-daily{
+            z-index: 1;
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .icon{
+            display: inline-block;
+            width: 17px;
+            height: 18px;
+            vertical-align: middle;
+        }
+        .icon1{
+            background: #fff url("../../硅谷/img/icon-nums_7f1b1d2.png") no-repeat 0 0 ;
+        }
+        .icon2{
+            background: #fff url("../../硅谷/img/icon-nums_7f1b1d2.png") no-repeat 0 -18px ;
+        }
+        .icon3{
+            background: #fff url("../../硅谷/img/icon-nums_7f1b1d2.png") no-repeat 0 -36px ;
+        }
+
+        .article-title{
+            font-size: 14px;
+            color: #222;
+        }
+
+        .author{
+            font-size: 12px;
+            color: #bbb;
+            float: right;
+
+            margin-top: 4px;
+        }
+        .author:hover{
+            text-decoration: underline;
+        }
+
+        .articles>li{
+            line-height: 2;
+        }
+
+        .article-title:hover{
+            text-decoration: underline;
+            color: #254282;
+        }
+    </style>
+</head>
+<body>
+
+<!--热门文章区域-->
+<div class="article-hot" id="articleHot">
+    <!--列编辑模式 Alt + 鼠标左键-->
+    <div class="tab tab-daily" id="tabDaily">日榜</div>
+    <div class="tab" id="tabWeek">周榜</div>
+
+    <div class="tab-content tab-content-daily" id="tabContentDaily">
+        <!--i = icon-->
+        <ul class="articles">
+
+
+            <!--title 仅仅是做用户提示。-->
+            <!--alt   应用在img , 内容可以被搜索引擎检索；当图标没有加载成功，网页显示的alt内容-->
+
+            <li><i class="icon icon1"></i> <a title="完整的标题... ...." class="article-title" href="#">著名笑星陈佩斯阔别荧屏这20年</a><a class="author" href="#">李洪伙</a> </li>
+            <li><i class="icon icon2"></i> <a class="article-title" href="#">建墙，禁止入境…川普是想做什</a><a  class="author" href="#">X教授</a></li>
+            <li><i class="icon icon3"></i> <a class="article-title" href="#">房价已经进入索罗斯的自反强化</a><a  class="author" href="#">齐俊杰</a></li>
+            <li><i class="icon icon4"></i> <a class="article-title" href="#">海盗克星！深度解读劳斯莱斯无</a><a  class="author" href="#">国仁</a></li>
+            <li><i class="icon icon5"></i> <a class="article-title" href="#">《奇星记》鲜肉齐聚，开创奇幻</a><a  class="author" href="#">影视毒舌</a></li>
+        </ul>
+    </div>
+    <div class="tab-content" id="tabContentWeek">
+        <ul class="articles">
+
+
+            <!--title 仅仅是做用户提示。-->
+            <!--alt   应用在img , 内容可以被搜索引擎检索；当图标没有加载成功，网页显示的alt内容-->
+
+            <li><i class="icon icon1"></i> <a title="完整的标题... ...." class="article-title" href="#">222</a><a class="author" href="#">李洪伙</a> </li>
+            <li><i class="icon icon2"></i> <a class="article-title" href="#">3333</a><a  class="author" href="#">X教授</a></li>
+            <li><i class="icon icon3"></i> <a class="article-title" href="#">666</a><a  class="author" href="#">齐俊杰</a></li>
+            <li><i class="icon icon4"></i> <a class="article-title" href="#">uuu</a><a  class="author" href="#">国仁</a></li>
+            <li><i class="icon icon5"></i> <a class="article-title" href="#">通天塔</a><a  class="author" href="#">影视毒舌</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    //        Add your code
+
+
+    var articleHotDom = document.querySelector("#articleHot");
+    var tabDailyDom = document.querySelector("#tabDaily");
+    var tabWeekDom = document.querySelector("#tabWeek");
+
+    var tabContentDailyDom = document.querySelector("#tabContentDaily");
+    var tabContentWeekDom = document.querySelector("#tabContentWeek");
+
+    /*
+     1.当鼠标悬浮在某一个tab时，该tab的底边变成白色
+     2.其他的tab底边还原为#ececec
+     3.tab的默认字体颜色 #999  ，当鼠标悬浮 black
+     4.当鼠标悬浮在某一个tab时,显示对应的内容区（改变层级）
+     */
+
+    articleHotDom.onmouseover = function (ev) {
+        var targetDom = ev.target;//触发实际事件的元素DOM
+
+        if(targetDom.id == "tabDaily"){
+            //console.log(targetDom);
+            tabDailyDom.style.borderBottom = "1px solid #fff";
+            tabDailyDom.style.color = "black";
+            tabWeekDom.style.borderBottom = "1px solid #ececec";
+            tabWeekDom.style.color = "#999";
+
+            tabContentDailyDom.style.zIndex = 1;
+            tabContentWeekDom.style.zIndex = 0;
+        }
+
+        if(targetDom.id == "tabWeek"){
+            //console.log(targetDom);
+            tabWeekDom.style.borderBottom = "1px solid #fff";
+            tabWeekDom.style.color = "black";
+            tabDailyDom.style.borderBottom = "1px solid #ececec";
+            tabDailyDom.style.color = "#999";
+
+            tabContentWeekDom.style.zIndex = 1;
+            tabContentDailyDom.style.zIndex = 0;
+
+        }
+
+        //tabDailyDom.style.borderBottom = "1px solid #fff";
+        //tabWeekDom.style.borderBottom = "1px solid #ececec";
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
